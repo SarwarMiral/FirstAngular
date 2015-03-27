@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" data-ng-app="restDemo">
+<head>
+    <title></title>
+    <script src="scripts/app/restservice.js"></script>
+    <script src="scripts/app/app.js"></script>
+    <script src="scripts/angular/angular.min.js"></script>
+    <script src="scripts/angular/angular-resource.min.js"></script>
+</head>
+<body>
+    <div data-ng-controller="restController">
+        {{name}}<br />
+        <button ng-click="Get_Array()">Get()_Array</button><br />
+        <button ng-click="Get_IntString_Object()">Get(int, string)_Object</button><br />
+        <button ng-click="Post_Object()">Post_Object(id)-'*'</button><br />
+        <button ng-click="Put_Id_Object()">Update/Put(id, object)</button><br />
+        <button ng-click="Delete-Id()">Delete(id)-'*'</button><br />
+        <br />
+        <div data-ng-repeat="person in persons">
+            {{person.PersonID}}
+            {{person.PersonName}}
+            {{person.PersonPhoneNo}}
+            {{person.PersonAge}}
+        </div>
+        <div>
+            {{human.PersonID}}
+            {{human.PersonName}}
+            {{human.PersonPhoneNo}}
+            {{human.PersonAge}}
+        </div>
+        <div>
+            {{message}}
+        </div>
+    </div>
+
+</body>
+</html>

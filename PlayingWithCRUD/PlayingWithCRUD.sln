@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayingWithCRUD", "PlayingWithCRUD\PlayingWithCRUD.csproj", "{1B876F07-1047-4A8D-A1E2-59A19019F0D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PWCClient", "PWCClient\PWCClient.csproj", "{1FC99A60-1B04-4C14-A2BE-3FA451E81907}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B876F07-1047-4A8D-A1E2-59A19019F0D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B876F07-1047-4A8D-A1E2-59A19019F0D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B876F07-1047-4A8D-A1E2-59A19019F0D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B876F07-1047-4A8D-A1E2-59A19019F0D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FC99A60-1B04-4C14-A2BE-3FA451E81907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FC99A60-1B04-4C14-A2BE-3FA451E81907}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FC99A60-1B04-4C14-A2BE-3FA451E81907}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FC99A60-1B04-4C14-A2BE-3FA451E81907}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
