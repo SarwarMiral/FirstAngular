@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>This is Settings Part</title>  
+</head>
+<body>
+    <div ng-controller="restController">
+        {{name}} <br />
+        <button ng-click="Get_Array()">Get()-Array</button><br />
+        <button ng-click="Get_IntString_Object()">Get(int,string)-object</button><br />
+        <button ng-click="Post_Object()">Post(object)-'*'</button><br />
+        <button ng-click="Put_Id_Object()">Update/Put(id,object)-'*'</button><br />
+        <button ng-click="Delete_Id()">Delete(id)-'*'</button><br />
+        -------------------<br />
+        <div ng-repeat="person in persons">
+            {{person.PersonId}}
+            {{person.PersonName}}
+            {{person.PersonPhoneNo}}
+            {{person.PersonAge}}
+        </div>
+        -------------------<br />
+        {{human.PersonId}}
+        {{human.PersonName}}
+        {{human.PersonPhoneNo}}
+        {{human.PersonAge}}
+
+        -------------------<br />
+        {{message}} <br />
+        <a ui-sref="home.settings.grid">Show Grid</a>
+        <div ui-view></div>
+        </div>
+</body>
+</html>

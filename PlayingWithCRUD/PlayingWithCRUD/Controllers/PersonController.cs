@@ -10,6 +10,8 @@ namespace PlayingWithCRUD.Controllers
 {
     public class PersonController : ApiController
     {
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         public List<Person> personList = new List<Person>() 
         {
             new Person{
@@ -25,12 +27,14 @@ namespace PlayingWithCRUD.Controllers
 
         public List<Person> Get()
         {
+            log.Info("Get Persons");
             return personList;
         }
 
         // GET: api/Person/5
         public Person Get(int age, string name)
         {
+            log.Info("Get Persons' age and name");
             for (int i = 0; i< personList.Count; i++)
                 if (personList[i].PersonAge == age && personList[i].PersonName.Equals(name, StringComparison.InvariantCultureIgnoreCase))
                 {
@@ -39,10 +43,10 @@ namespace PlayingWithCRUD.Controllers
                 return null;
         }
 
-
         // POST: api/Person
         public bool Post(Person person)
         {
+            log.Info("Add");
             personList.Add(person);
             return true;
         }
@@ -50,6 +54,7 @@ namespace PlayingWithCRUD.Controllers
         // PUT: api/Person/5
         public bool Put(int id, Person person)
         {
+            log.Info("put");
             personList[id] = person;
             return true;
         }
@@ -57,6 +62,7 @@ namespace PlayingWithCRUD.Controllers
         // DELETE: api/Person/5
         public void Delete(int id)
         {
+            log.Info("Delete");
         }
     }
 }

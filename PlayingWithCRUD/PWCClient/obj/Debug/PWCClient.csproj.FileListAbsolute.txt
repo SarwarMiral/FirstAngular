@@ -4,3 +4,5 @@ D:\VS\PlayingWithCRUD\PWCClient\bin\PWCClient.pdb
 D:\VS\PlayingWithCRUD\PWCClient\obj\Debug\PWCClient.csprojResolveAssemblyReference.cache
 D:\VS\PlayingWithCRUD\PWCClient\obj\Debug\PWCClient.dll
 D:\VS\PlayingWithCRUD\PWCClient\obj\Debug\PWCClient.pdb
+D:\VS\PlayingWithCRUD\PWCClient\bin\log4net.dll
+D:\VS\PlayingWithCRUD\PWCClient\bin\log4net.xml

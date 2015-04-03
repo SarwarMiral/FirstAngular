@@ -38,3 +38,5 @@ D:\VS\PlayingWithCRUD\PlayingWithCRUD\bin\Thinktecture.IdentityModel.xml
 D:\VS\PlayingWithCRUD\PlayingWithCRUD\bin\System.Web.Cors.dll
 D:\VS\PlayingWithCRUD\PlayingWithCRUD\bin\System.Web.Http.Cors.dll
 D:\VS\PlayingWithCRUD\PlayingWithCRUD\bin\System.Web.Http.Cors.xml
+D:\VS\PlayingWithCRUD\PlayingWithCRUD\bin\log4net.dll
+D:\VS\PlayingWithCRUD\PlayingWithCRUD\bin\log4net.xml

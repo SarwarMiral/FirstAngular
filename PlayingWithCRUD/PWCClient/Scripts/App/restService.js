@@ -1,77 +1,92 @@
 ﻿angular.module('restDemo').service('restService', ['$resource', '$q', function ($resource, $q) {
     var fGetArray = function (url) {
-        var deffered = $q.defer();
-        var serverRestAPI = $resource(url, {}, { get: { method: 'GET', IsArray: true } });
-        serverRestAPI.get(function (response) {
-            //console.log.response();
-            return deffered.resolve(response.value);
-        },
+        var deferred = $q.defer();
+        var serverRestApi = $resource(url, {}, { get: { method: 'GET', isArray: true } });
+        serverRestApi.get(
+            function (response) {
+                //console.log('This is response : ');
+                //console.log(response);
+                return deferred.resolve(response);
+            },
             function (error) {
-                return deffered.reject(error);
-            }
-        );
-        return deffered.promise;
+                //console.log(response);
+                return deferred.reject(error);
+            });
+        return deferred.promise;
     }
+
     var fGetIntStringObject = function (url) {
-        var deffered = $q.defer();
-        var serverRestAPI = $resource(url, { age:20, name:'Miral'}, { get:{method:'GET', isArray: false}});
-        serverRestAPI.get(function (response) {
-            //console.log.response();
-            return deffered.resolve(response.value);
-        },
+        var deferred = $q.defer();
+        var serverRestApi = $resource(url, { age: 20, name: 'def' }, { get: { method: 'GET', isArray: false } });
+        serverRestApi.get(
+            function (response) {
+                //console.log('This is response : ');
+                //console.log(response);
+                return deferred.resolve(response);
+            },
             function (error) {
-                return deffered.reject(error);
-            }
-        );
-        return deffered.promise;
+                //console.log(response);
+                return deferred.reject(error);
+            });
+        return deferred.promise;
     }
-    var fPost_Object = function (url) {
-        var deffered = $q.defer();
-        var serverRestAPI = $resource(url);
-        var newPerson = { PersonID: 5, PersonName: "Rafi", PersonPhoneNo: "9018309831", PersonAge: 23}
-        serverRestAPI.save(newPerson, function (response) {
-            //console.log.response();
-            return deffered.resolve(response.$resolve);
-        },
+
+    var fPostObject = function (url) {
+        var deferred = $q.defer();
+        var serverRestApi = $resource(url);
+        var newperson = { PersonId: 3, PersonName: "jkl", PersonPhoneNumber: "101112", PersonAge: 28 };
+        serverRestApi.save(newperson,
+            function (response) {
+                console.log('This is response : ');
+                console.log(response);
+                return deferred.resolve(response.$resolved);
+            },
             function (error) {
-                return deffered.reject(error);
-            }
-        );
-        return deffered.promise;
+                //console.log(response);
+                return deferred.reject(error);
+            });
+        return deferred.promise;
     }
-    var fPut_Id_Object = function (url) {
-        var deffered = $q.defer();
-        var serverRestAPI = $resource(url, { id: 0 }, { anything: { method: 'PUT', isArray: false } });
-        var updatedPerson = { PersonID:0, PersonName: "Miral", PersonPhoneNo: "9018309831", PersonAge: 23 }
-        serverRestAPI.anything(updatedPerson, function (response) {
-            //console.log.response();
-            return deffered.resolve(response.$resolve);
-        },
+
+    var fPutIdObject = function (url) {
+        var deferred = $q.defer();
+        var serverRestApi = $resource(url, { id: 0 }, { anything: { method: 'PUT' } });
+        var updatedPerson = { PersonId: 0, PersonName: "Miral", PersonPhoneNumber: "x123", PersonAge: 50 };
+        serverRestApi.anything(updatedPerson,
+            function (response) {
+                console.log('This is response : ');
+                console.log(response);
+                return deferred.resolve(response.$resolved);
+            },
             function (error) {
-                return deffered.reject(error);
-            }
-        );
-        return deffered.promise;
+                //console.log(response);
+                return deferred.reject(error);
+            });
+        return deferred.promise;
     }
+
     var fDeleteId = function (url) {
-        var deffered = $q.defer();
-        var serverRestAPI = $resource(url, { id: 10 }, { fuckU: { method: 'DELETE', isArray: false } });
-        serverRestAPI.fuckU(function (response) {
-            //console.log.response();
-            return deffered.resolve(response.$resolve);
-        },
+        var deferred = $q.defer();
+        var serverRestApi = $resource(url, { id: 0 }, { boom: { method: 'DELETE' } });
+        serverRestApi.boom(
+            function (response) {
+                //console.log('This is response : ');
+                //console.log(response);
+                return deferred.resolve(response.$resolved);
+            },
             function (error) {
-                return deffered.reject(error);
-            }
-        );
-        return deffered.promise;
+                //console.log(response);
+                return deferred.reject(error);
+            });
+        return deferred.promise;
     }
+    //fDeleteId
 
     return {
         Get_Array: fGetArray,
         Get_IntString_Object: fGetIntStringObject,
-        Post_Object: fPost_Object,
-        Put_Id_Object: fPut_Id_Object,
+        Post_Object: fPostObject,
+        Put_Id_Object: fPutIdObject,
         Delete_Id: fDeleteId
     }
 }]);
